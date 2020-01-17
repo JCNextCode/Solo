@@ -29,6 +29,7 @@ class ViewController: UIViewController {
     @IBAction func touchCard(_ sender: UIButton) {
         if let cardNumber = setCardButton.firstIndex(of: sender){
             print("\(cardNumber)")
+            game.chooseCard(at: cardNumber)
         }
         
     }

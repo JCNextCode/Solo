@@ -21,12 +21,10 @@ struct Card:Equatable{
     }
     init(){
         self.identifier = Card.getUniqueIdentifier()
+        self.features = (NumShapes.none,Shape.none,Shading.none,CardColor.none)
     }
     
-    var isSet = false
-    var isSelected = false
-    
-    var features = (NumShapes.none,Shape.none,Shading.none,CardColor.none)
+    var features: (NumShapes,Shape,Shading,CardColor)
 }
 
 enum NumShapes:Int{
@@ -34,7 +32,7 @@ enum NumShapes:Int{
     case one = 1
     case two = 2
     case three = 3
-    static var all = [NumShapes.none,NumShapes.one,NumShapes.two,NumShapes.three]
+    static var all = [NumShapes.one,NumShapes.two,NumShapes.three]
 }
 
 enum Shape:String{
@@ -42,7 +40,7 @@ enum Shape:String{
     case diamond
     case squiggle
     case oval
-    static var all = [Shape.none,Shape.diamond,Shape.squiggle,Shape.oval]
+    static var all = [Shape.diamond,Shape.squiggle,Shape.oval]
 }
 
 enum Shading:String{
@@ -50,7 +48,7 @@ enum Shading:String{
     case solid
     case striped
     case open
-    static var all = [Shading.none,Shading.solid,Shading.striped,Shading.open]
+    static var all = [Shading.solid,Shading.striped,Shading.open]
 }
 
 enum CardColor:String{
@@ -58,7 +56,7 @@ enum CardColor:String{
     case red
     case green
     case purple
-    static var all = [CardColor.none,CardColor.red,CardColor.green,CardColor.purple]
+    static var all = [CardColor.red,CardColor.green,CardColor.purple]
 }
 
 

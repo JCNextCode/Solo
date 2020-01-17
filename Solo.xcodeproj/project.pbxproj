@@ -41,6 +41,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		741E0E7023D1CDDC00CAD2E5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				748DF01923B11E0B00DF3730 /* AppDelegate.swift */,
+				748DF01B23B11E0B00DF3730 /* SceneDelegate.swift */,
+				748DF02223B11E0E00DF3730 /* Assets.xcassets */,
+				748DF02423B11E0E00DF3730 /* LaunchScreen.storyboard */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		748DF00D23B11E0B00DF3730 = {
 			isa = PBXGroup;
 			children = (
@@ -60,15 +71,12 @@
 		748DF01823B11E0B00DF3730 /* Solo */ = {
 			isa = PBXGroup;
 			children = (
-				748DF01923B11E0B00DF3730 /* AppDelegate.swift */,
-				748DF01B23B11E0B00DF3730 /* SceneDelegate.swift */,
 				748DF01D23B11E0B00DF3730 /* ViewController.swift */,
 				7403302E23B22C30009292A7 /* SetLogic.swift */,
 				7403303023B22C49009292A7 /* Card.swift */,
 				748DF01F23B11E0B00DF3730 /* Main.storyboard */,
-				748DF02223B11E0E00DF3730 /* Assets.xcassets */,
-				748DF02423B11E0E00DF3730 /* LaunchScreen.storyboard */,
 				748DF02723B11E0E00DF3730 /* Info.plist */,
+				741E0E7023D1CDDC00CAD2E5 /* Supporting Files */,
 			);
 			path = Solo;
 			sourceTree = "<group>";

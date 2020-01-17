@@ -33,6 +33,27 @@ class ViewController: UIViewController {
         }
         
     }
+    
+    private func updateViewFromModel(){
+        for index in setCardButton.indices{
+            let cardButton = setCardButton[index]
+            let card = game.inDisplayCards[index]
+
+        }
+    }
+    
+    private var cardCharacters = ["","▲", "●", "■"]
+    
+    private func setCardDisplay(for card:Card) ->String{
+        var cardString = cardCharacters[card.features.0.hashValue]
+        var tempCardString = ""
+        for _ in 1...card.features.0.hashValue{
+            tempCardString += cardString
+        }
+        cardString = tempCardString
+
+        return cardString
+    }
 }
 
 extension Int{

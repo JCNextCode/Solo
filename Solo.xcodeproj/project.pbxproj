@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		7403302F23B22C30009292A7 /* SetLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7403302E23B22C30009292A7 /* SetLogic.swift */; };
 		7403303123B22C49009292A7 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7403303023B22C49009292A7 /* Card.swift */; };
+		7482E50723D86336002A4D53 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7482E50623D86336002A4D53 /* CardView.swift */; };
 		748DF01A23B11E0B00DF3730 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748DF01923B11E0B00DF3730 /* AppDelegate.swift */; };
 		748DF01C23B11E0B00DF3730 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748DF01B23B11E0B00DF3730 /* SceneDelegate.swift */; };
 		748DF01E23B11E0B00DF3730 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748DF01D23B11E0B00DF3730 /* ViewController.swift */; };
@@ -20,6 +21,7 @@
 /* Begin PBXFileReference section */
 		7403302E23B22C30009292A7 /* SetLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetLogic.swift; sourceTree = "<group>"; };
 		7403303023B22C49009292A7 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		7482E50623D86336002A4D53 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		748DF01623B11E0B00DF3730 /* Solo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Solo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		748DF01923B11E0B00DF3730 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		748DF01B23B11E0B00DF3730 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -74,6 +76,7 @@
 				748DF01D23B11E0B00DF3730 /* ViewController.swift */,
 				7403302E23B22C30009292A7 /* SetLogic.swift */,
 				7403303023B22C49009292A7 /* Card.swift */,
+				7482E50623D86336002A4D53 /* CardView.swift */,
 				748DF01F23B11E0B00DF3730 /* Main.storyboard */,
 				748DF02723B11E0E00DF3730 /* Info.plist */,
 				741E0E7023D1CDDC00CAD2E5 /* Supporting Files */,
@@ -156,6 +159,7 @@
 				748DF01A23B11E0B00DF3730 /* AppDelegate.swift in Sources */,
 				7403303123B22C49009292A7 /* Card.swift in Sources */,
 				748DF01C23B11E0B00DF3730 /* SceneDelegate.swift in Sources */,
+				7482E50723D86336002A4D53 /* CardView.swift in Sources */,
 				7403302F23B22C30009292A7 /* SetLogic.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

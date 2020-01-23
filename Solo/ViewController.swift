@@ -17,6 +17,8 @@ class ViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        updateViewFromModel()
+        
         // Do any additional setup after loading the view.
     }
 
@@ -29,7 +31,8 @@ class ViewController: UIViewController {
     @IBAction func touchCard(_ sender: UIButton) {
         if let cardNumber = setCardButton.firstIndex(of: sender){
             print("\(cardNumber)")
-            game.chooseCard(at: cardNumber)
+            //game.chooseCard(at: cardNumber)
+            //setCardButton[cardNumber].setNeedsDisplay()
         }
         
     }
@@ -38,21 +41,67 @@ class ViewController: UIViewController {
         for index in setCardButton.indices{
             let cardButton = setCardButton[index]
             let card = game.inDisplayCards[index]
-
+            
+            cardButton.layer.borderWidth = 3.0
+            cardButton.layer.borderColor = UIColor.blue.cgColor
+            cardButton.layer.backgroundColor = UIColor.white.cgColor
+            cardButton.layer.cornerRadius = 8.0
+            
+            //cardButton.setTitle(setCardDisplay(for: card), for: UIControl.State.normal)
+            cardButton.setAttributedTitle( setCardDisplay(for: card) , for: UIControl.State.normal)
         }
     }
     
-    private var cardCharacters = ["","▲", "●", "■"]
+    private var cardCharacterChoices = ["diamond":"▲","oval":"●","squiggle":"■"]
+    //private var cardDesign = [Shape:String]()
     
-    private func setCardDisplay(for card:Card) ->String{
-        var cardString = cardCharacters[card.features.0.hashValue]
+    private func setCardDisplay(for card:Card) ->NSAttributedString{
+        var cardString = cardCharacterChoices[card.features.1.rawValue]
+
         var tempCardString = ""
-        for _ in 1...card.features.0.hashValue{
-            tempCardString += cardString
+        for _ in 1...card.features.0.rawValue{
+            tempCardString += cardString!
         }
         cardString = tempCardString
 
-        return cardString
+        var font = UIFont.preferredFont(forTextStyle: .body).withSize(20)
+        font = UIFontMetrics(forTextStyle: .body).scaledFont(for: font)
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.alignment = .center
+        var imageColor : UIColor
+        var alphaComponent : UIColor
+        
+        switch card.features.3.rawValue {
+        case "red":
+            imageColor = UIColor.red
+        case "green":
+            imageColor = UIColor.green
+        case "purple":
+            imageColor = UIColor.purple
+        default:
+            imageColor = UIColor.white
+        }
+        
+        switch card.features.2.rawValue {
+        case "solid":
+            alphaComponent = imageColor.withAlphaComponent(1.0)
+        case "striped":
+            alphaComponent = imageColor.withAlphaComponent(0.15)
+        case "open":
+            alphaComponent = imageColor.withAlphaComponent(0.0)
+        default:
+            alphaComponent = imageColor.withAlphaComponent(1.0)
+        }
+        
+        let attributes: [NSAttributedString.Key: Any] = [
+            .font: font,
+            .foregroundColor: alphaComponent,
+            .paragraphStyle: paragraphStyle,
+            .strokeWidth: -1,
+            .strokeColor: imageColor
+        ]
+        let attributedCardString = NSAttributedString(string: cardString!, attributes: attributes)
+        return attributedCardString
     }
 }
 

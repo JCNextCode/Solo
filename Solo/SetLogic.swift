@@ -8,7 +8,7 @@
 
 import Foundation
 
-let DISPLAYABLE_SIZE = 12
+let DISPLAYABLE_SIZE = 24
 let CURRENT_SELECTED_SIZE = 3
 let FULL_DECK_SIZE = 81
 

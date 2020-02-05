@@ -17,6 +17,7 @@ class ViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        showInitDisplay()
         updateViewFromModel()
         
         // Do any additional setup after loading the view.
@@ -25,26 +26,49 @@ class ViewController: UIViewController {
     @IBOutlet var setCardButton: [UIButton]!
     
     @IBAction func dealMoreCardsButton(_ sender: UIButton) {
+        game.addCards(count: 3)
+        updateViewFromModel()
     }
     
     
     @IBAction func touchCard(_ sender: UIButton) {
+        //Should only handle UI in here.  What do i want to do...
+        //Check if card is a match and then update UI.
+        
         if let cardNumber = setCardButton.firstIndex(of: sender){
             print("\(cardNumber)")
-            //game.chooseCard(at: cardNumber)
-            //setCardButton[cardNumber].setNeedsDisplay()
+            print("\(game.inDisplayCards[cardNumber])")
+            
+            if (game.chooseCard(at: cardNumber)){
+                updateViewFromModel()
+            }else{
+                updateSelectedCardView(at: cardNumber)
+            }
         }
-        
     }
     
-    private func updateViewFromModel(){
+    private func showInitDisplay(){
         for index in setCardButton.indices{
+            setCardButton[index].layer.isHidden = true
+        }
+    }
+    
+    private func updateSelectedCardView(at index:Int){
+        let selectedButton = setCardButton[index]
+        selectedButton.layer.backgroundColor = UIColor.yellow.cgColor
+    }
+    
+    
+    private func updateViewFromModel(){
+        for index in game.inDisplayCards.indices{
             let cardButton = setCardButton[index]
             let card = game.inDisplayCards[index]
             
+            cardButton.layer.isHidden = false
             cardButton.layer.borderWidth = 3.0
             cardButton.layer.borderColor = UIColor.blue.cgColor
             cardButton.layer.backgroundColor = UIColor.white.cgColor
+            
             cardButton.layer.cornerRadius = 8.0
             
             //cardButton.setTitle(setCardDisplay(for: card), for: UIControl.State.normal)
